@@ -1,13 +1,13 @@
-package kmod.net;
+package minecraftonline.kmod.net;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 
-import kmod.player.control.KClientPlayerBase;
-import kmod.player.control.KServerPlayerBase;
-import kmod.player.model.PlayerModel;
-import kmod.player.model.PlayerRules;
+import minecraftonline.kmod.player.control.KClientPlayerBase;
+import minecraftonline.kmod.player.control.KServerPlayerBase;
+import minecraftonline.kmod.player.model.PlayerModel;
+import minecraftonline.kmod.player.model.PlayerRules;
 
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.player.EntityPlayerMP;

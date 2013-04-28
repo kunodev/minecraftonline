@@ -1,7 +1,7 @@
-package kmod.item;
+package minecraftonline.kmod.item;
 
-import kmod.player.control.KServerPlayerBase;
-import kmod.player.model.BalancingConstants;
+import minecraftonline.kmod.player.control.KServerPlayerBase;
+import minecraftonline.kmod.player.model.BalancingConstants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;

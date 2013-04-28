@@ -1,4 +1,4 @@
-package kmod.client.input;
+package minecraftonline.kmod.client.input;
 
 import java.util.ArrayList;
 

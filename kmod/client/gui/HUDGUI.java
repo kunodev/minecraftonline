@@ -1,11 +1,11 @@
-package kmod.client.gui;
+package minecraftonline.kmod.client.gui;
 
 
 import java.awt.Color;
 import java.util.List;
 import java.util.Random;
 
-import kmod.player.control.KClientPlayerBase;
+import minecraftonline.kmod.player.control.KClientPlayerBase;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
@@ -51,6 +51,13 @@ import net.minecraft.village.*;
 import net.minecraft.world.*;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.ForgeHooks;
+
+
+/**
+ * 
+ * @author
+ * This class is a bad copy of the TFCraft HUD
+ */
 
 public class HUDGUI extends GuiIngame {
 	//test
@@ -113,7 +120,7 @@ public class HUDGUI extends GuiIngame {
 
 			if (var10 > 0.0F)
 			{
-				this.renderPortalOverlay(var10, scaledWidth, scaledHeight);
+				
 			}
 		}
 
@@ -128,7 +135,7 @@ public class HUDGUI extends GuiIngame {
 		int armorRowHeight;
 		int healthRowHeight;
 
-		if (!this.mc.playerController.func_78747_a())
+		if (!this.mc.playerController.shouldDrawHUD())
 		{
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/gui/gui.png"));
@@ -562,7 +569,8 @@ public class HUDGUI extends GuiIngame {
 				{
 					GuiPlayerInfo var46 = (GuiPlayerInfo)var39.get(var19);
 					fontRenderer.drawStringWithShadow(var46.name, var20, healthRowHeight, 16777215);
-					this.mc.renderEngine.bindTexture(this.mc.renderEngine.getTexture("/gui/icons.png"));
+					this.mc.renderEngine.bindTexture("/gui/icons.png");
+					//this.mc.renderEngine.bindTexture(this.mc.renderEngine.getTexture("/gui/icons.png"));
 					byte var51 = 0;
 					boolean var49 = false;
 					byte var50;
@@ -690,41 +698,6 @@ public class HUDGUI extends GuiIngame {
 		GL11.glEnable(GL11.GL_DEPTH_TEST);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-	}
-
-	/**
-	 * Renders the portal overlay. Args: portalStrength, width, height
-	 */
-	private void renderPortalOverlay(float par1, int par2, int par3)
-	{
-		if (par1 < 1.0F)
-		{
-			par1 *= par1;
-			par1 *= par1;
-			par1 = par1 * 0.8F + 0.2F;
-		}
-
-		GL11.glDisable(GL11.GL_ALPHA_TEST);
-		GL11.glDisable(GL11.GL_DEPTH_TEST);
-		GL11.glDepthMask(false);
-		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, par1);
-		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/terrain.png"));
-		float var4 = (float)(Block.portal.blockIndexInTexture % 16) / 16.0F;
-		float var5 = (float)(Block.portal.blockIndexInTexture / 16) / 16.0F;
-		float var6 = (float)(Block.portal.blockIndexInTexture % 16 + 1) / 16.0F;
-		float var7 = (float)(Block.portal.blockIndexInTexture / 16 + 1) / 16.0F;
-		Tessellator var8 = Tessellator.instance;
-		var8.startDrawingQuads();
-		var8.addVertexWithUV(0.0D, (double)par3, -90.0D, (double)var4, (double)var7);
-		var8.addVertexWithUV((double)par2, (double)par3, -90.0D, (double)var6, (double)var7);
-		var8.addVertexWithUV((double)par2, 0.0D, -90.0D, (double)var6, (double)var5);
-		var8.addVertexWithUV(0.0D, 0.0D, -90.0D, (double)var4, (double)var5);
-		var8.draw();
-		GL11.glDepthMask(true);
-		GL11.glEnable(GL11.GL_DEPTH_TEST);
-		GL11.glEnable(GL11.GL_ALPHA_TEST);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	}
 
 	/**

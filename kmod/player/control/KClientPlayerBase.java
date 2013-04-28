@@ -1,10 +1,10 @@
-package kmod.player.control;
+package minecraftonline.kmod.player.control;
 
-import kmod.client.gui.HUDGUI;
-import kmod.main.KModMain;
-import kmod.player.model.BalancingConstants;
-import kmod.player.model.PlayerModel;
-import kmod.player.model.PlayerRules;
+import minecraftonline.kmod.client.gui.HUDGUI;
+import minecraftonline.kmod.main.KModMain;
+import minecraftonline.kmod.player.model.BalancingConstants;
+import minecraftonline.kmod.player.model.PlayerModel;
+import minecraftonline.kmod.player.model.PlayerRules;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerCapabilities;
@@ -73,7 +73,7 @@ public class KClientPlayerBase extends PlayerBase {
 	
 	
 	public void actuateStats(){
-		capability.func_82877_b((defaultRunSpeed + stats.getStat(2) * BalancingConstants.walk));
+		capability.setPlayerWalkSpeed((defaultRunSpeed + stats.getStat(2) * BalancingConstants.walk));
 		capability.setFlySpeed(capability.getFlySpeed() + (stats.getStat(2) * BalancingConstants.walk/10));
 		this.player.capabilities = capability;
 	}

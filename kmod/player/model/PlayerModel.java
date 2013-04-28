@@ -1,4 +1,4 @@
-package kmod.player.model;
+package minecraftonline.kmod.player.model;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

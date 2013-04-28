@@ -1,4 +1,4 @@
-package kmod.player.model;
+package minecraftonline.kmod.player.model;
 
 public class BalancingConstants {
 	//foo

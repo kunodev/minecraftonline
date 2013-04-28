@@ -1,4 +1,4 @@
-package kmod.client.gui;
+package minecraftonline.kmod.client.gui;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;

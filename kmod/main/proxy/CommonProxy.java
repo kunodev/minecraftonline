@@ -1,11 +1,11 @@
-package kmod.main.proxy;
+package minecraftonline.kmod.main.proxy;
 
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import kmod.client.gui.GUIHandler;
-import kmod.item.ItemKunosBow;
-import kmod.player.control.KServerPlayerBase;
+import minecraftonline.kmod.client.gui.GUIHandler;
+import minecraftonline.kmod.item.ItemKunosBow;
+import minecraftonline.kmod.player.control.KServerPlayerBase;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -46,7 +46,7 @@ public class CommonProxy{
 	}
 	
 	public void registerItemsAndEntities(){
-		tutorialItem = new ItemKunosBow(5000).setIconIndex(101).setItemName("HuntersBow");
+		tutorialItem = new ItemKunosBow(5000);
 		ItemStack string = new ItemStack(Item.silk);
 		ItemStack stick = new ItemStack(Item.stick);
 		ItemStack plank = new ItemStack(Block.planks);

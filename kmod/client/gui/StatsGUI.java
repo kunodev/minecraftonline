@@ -1,4 +1,4 @@
-package kmod.client.gui;
+package minecraftonline.kmod.client.gui;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -6,11 +6,11 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import kmod.net.PacketBuilder;
-import kmod.player.control.KClientPlayerBase;
-import kmod.player.control.KServerPlayerBase;
-import kmod.player.model.PlayerModel;
-import kmod.player.model.PlayerRules;
+import minecraftonline.kmod.net.PacketBuilder;
+import minecraftonline.kmod.player.control.KClientPlayerBase;
+import minecraftonline.kmod.player.control.KServerPlayerBase;
+import minecraftonline.kmod.player.model.PlayerModel;
+import minecraftonline.kmod.player.model.PlayerRules;
 
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -125,20 +125,21 @@ public class StatsGUI extends GuiScreen
         super.initGui();
         int l = (width - xSize) / 2;
         int i1 = (height - ySize) / 2;
-        controlList.add(new GuiButton(0, l+20, i1 + 118, 66, 20, "Str+"));
-        controlList.add(new GuiButton(1, l+20, i1 + 137, 66, 20, "Vit+"));
-        controlList.add(new GuiButton(2, l+20, i1 + 156, 66, 20, "Agi+"));
-        controlList.add(new GuiButton(3, l+85, i1 + 118, 66, 20, "Dex+"));
-        controlList.add(new GuiButton(4, l+85, i1 + 137, 66, 20, "Wip+"));
-        controlList.add(new GuiButton(5, l+85, i1 + 156, 66, 20, "Int+"));
-        controlList.add(new GuiButton(6, l+20, i1 + 175, 66, 20, "Done"));
-        controlList.add(new GuiButton(7, l+85, i1 + 175, 66, 20, "Cancel"));
+        
+        this.buttonList.add(new GuiButton(0, l+20, i1 + 118, 66, 20, "Str+"));
+        this.buttonList.add(new GuiButton(1, l+20, i1 + 137, 66, 20, "Vit+"));
+        this.buttonList.add(new GuiButton(2, l+20, i1 + 156, 66, 20, "Agi+"));
+        this.buttonList.add(new GuiButton(3, l+85, i1 + 118, 66, 20, "Dex+"));
+        this.buttonList.add(new GuiButton(4, l+85, i1 + 137, 66, 20, "Wip+"));
+        this.buttonList.add(new GuiButton(5, l+85, i1 + 156, 66, 20, "Int+"));
+        this.buttonList.add(new GuiButton(6, l+20, i1 + 175, 66, 20, "Done"));
+        this.buttonList.add(new GuiButton(7, l+85, i1 + 175, 66, 20, "Cancel"));
     }
 
     @Override
     public void drawScreen(int par1, int par2, float par3)
     {
-        int k = mc.renderEngine.getTexture("/kmod/resources/gui_stats.png");
+        int k = mc.renderEngine.getTexture("/minecraftonline/kmod/resources/gui_stats.png");
 
         int var4 = this.guiLeft;
         int var5 = this.guiTop;
@@ -182,9 +183,9 @@ public class StatsGUI extends GuiScreen
         //int rain = (int) TFC_Climate.getRainfall((int) player.posX,(int) player.posY, (int) player.posZ);
         //drawCenteredString(fontRenderer,"Rain : " + rain, l + 87, i1+86, 0x000000);
         
-        for (int var6 = 0; var6 < this.controlList.size(); ++var6)
+        for (int var6 = 0; var6 < this.buttonList.size(); ++var6)
         {
-            GuiButton var7 = (GuiButton)this.controlList.get(var6);
+            GuiButton var7 = (GuiButton)this.buttonList.get(var6);
             var7.drawButton(this.mc, par1, par2);
         }
 

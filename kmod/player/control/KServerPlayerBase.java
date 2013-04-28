@@ -1,4 +1,4 @@
-package kmod.player.control;
+package minecraftonline.kmod.player.control;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -7,8 +7,8 @@ import java.util.HashMap;
 import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.common.network.Player;
 
-import kmod.entity.ApokalypseThread;
-import kmod.player.model.*;
+import minecraftonline.kmod.entity.ApokalypseThread;
+import minecraftonline.kmod.player.model.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.PlayerCapabilities;

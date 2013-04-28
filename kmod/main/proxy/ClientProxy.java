@@ -1,17 +1,17 @@
-package kmod.main.proxy;
+package minecraftonline.kmod.main.proxy;
 
 
-import kmod.client.input.*;
+import minecraftonline.kmod.client.input.*;
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import kmod.client.gui.GUIHandler;
-import kmod.client.gui.HUDGUI;
-import kmod.client.gui.StatsGUI;
-import kmod.client.input.KeyBindings;
-import kmod.player.control.KClientPlayerBase;
+import minecraftonline.kmod.client.gui.GUIHandler;
+import minecraftonline.kmod.client.gui.HUDGUI;
+import minecraftonline.kmod.client.gui.StatsGUI;
+import minecraftonline.kmod.client.input.KeyBindings;
+import minecraftonline.kmod.player.control.KClientPlayerBase;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;
