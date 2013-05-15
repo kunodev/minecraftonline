@@ -1,9 +1,9 @@
-package kmod.main;
+package minecraftonline.kmod.main;
 
-import kmod.client.gui.GUIHandler;
-import kmod.main.proxy.ClientProxy;
-import kmod.main.proxy.CommonProxy;
-import kmod.net.*;
+import minecraftonline.kmod.client.gui.GUIHandler;
+import minecraftonline.kmod.main.proxy.ClientProxy;
+import minecraftonline.kmod.main.proxy.CommonProxy;
+import minecraftonline.kmod.net.*;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
@@ -33,7 +33,7 @@ connectionHandler = ServerPacketHandler.class)
 
 public class KModMain {
 	//I dont hate you...
-	@SidedProxy(clientSide = "kmod.main.proxy.ClientProxy",serverSide = "kmod.main.proxy.CommonProxy")
+	@SidedProxy(clientSide = "minecraftonline.kmod.main.proxy.ClientProxy",serverSide = "minecraftonline.kmod.main.proxy.CommonProxy")
 
 	//public static ClientProxy cproxy = new ClientProxy();
 	//I guess this is a singleton now...

@@ -1,4 +1,4 @@
-package kmod.entity;
+package minecraftonline.kmod.entity;
 
 import java.math.*;
 

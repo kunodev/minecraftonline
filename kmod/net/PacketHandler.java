@@ -1,4 +1,4 @@
-package kmod.net;
+package minecraftonline.kmod.net;
 
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;

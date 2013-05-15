@@ -1,12 +1,12 @@
-package kmod.client.input;
+package minecraftonline.kmod.client.input;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.util.EnumSet;
 
-import kmod.client.gui.StatsGUI;
-import kmod.main.KModMain;
-import kmod.player.control.KClientPlayerBase;
+import minecraftonline.kmod.client.gui.StatsGUI;
+import minecraftonline.kmod.main.KModMain;
+import minecraftonline.kmod.player.control.KClientPlayerBase;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

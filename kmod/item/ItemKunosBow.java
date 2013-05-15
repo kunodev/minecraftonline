@@ -1,7 +1,10 @@
-package kmod.item;
+package minecraftonline.kmod.item;
 
-import kmod.player.control.KServerPlayerBase;
-import kmod.player.model.BalancingConstants;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import minecraftonline.kmod.player.control.KServerPlayerBase;
+import minecraftonline.kmod.player.model.BalancingConstants;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -11,6 +14,7 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
@@ -19,7 +23,6 @@ public class ItemKunosBow extends ItemBow {
 
 	public ItemKunosBow(int par1) {
 		super(par1);
-
         this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
@@ -103,6 +106,22 @@ public class ItemKunosBow extends ItemBow {
                 par2World.spawnEntityInWorld(var8);
             }
         }
+       
 	}
-
+    @Override
+	public void registerIcons(IconRegister iconRegister)
+	{
+    	this.setUnlocalizedName("bow");
+		super.registerIcons(iconRegister);		
+	}
+    
+    @Override   
+    @SideOnly(Side.CLIENT)
+    /**
+     * used to cycle through icons based on their used duration, i.e. for the bow
+     */
+    public Icon getItemIconForUseDuration(int par1)
+    {
+        return super.getItemIconForUseDuration(par1);
+    }
 }

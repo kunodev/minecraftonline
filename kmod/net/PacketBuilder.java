@@ -1,6 +1,6 @@
-package kmod.net;
+package minecraftonline.kmod.net;
 
-import kmod.player.model.PlayerModel;
+import minecraftonline.kmod.player.model.PlayerModel;
 
 public class PacketBuilder {
 

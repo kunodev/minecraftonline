@@ -1,4 +1,4 @@
-package kmod.client.gui;
+package minecraftonline.kmod.client.gui;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;
