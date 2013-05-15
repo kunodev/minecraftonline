@@ -5,6 +5,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 import minecraftonline.kmod.player.control.KServerPlayerBase;
 import minecraftonline.kmod.player.model.BalancingConstants;
 import net.minecraft.client.renderer.texture.IconRegister;
+import minecraftonline.kmod.player.control.KServerPlayerBase;
+import minecraftonline.kmod.player.model.BalancingConstants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
