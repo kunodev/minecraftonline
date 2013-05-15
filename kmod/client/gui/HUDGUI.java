@@ -162,18 +162,17 @@ public class HUDGUI extends GuiIngame {
 
 			healthRowHeight = scaledHeight - 39;
 
-			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/gui/gui.png"));
+			//GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/gui/gui.png"));
 			KClientPlayerBase playerclient = ((KClientPlayerBase)this.mc.thePlayer.getPlayerBase("Kunos Mod Client"));
+			//GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/minecraftonline/kmod/resources/icons.png"));
+			
 			if(playerclient != null)
 			{
-				//Draw Health
-				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-				GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/minecraftonline/kmod/resources/icons.png"));
+				this.mc.renderEngine.bindTexture("/minecraftonline/kmod/resources/icons.png");
 				this.drawTexturedModalRect(scaledWidth / 2-91, healthRowHeight, 0, 0, 90, 10);
 				float maxHealth = playerclient.getMaxHealth();
 				float percentHealth = (float)this.mc.thePlayer.getHealth()/maxHealth;
 				this.drawTexturedModalRect(scaledWidth / 2-91, healthRowHeight, 0, 9, (int) (90*percentHealth), 9);
-
 				String healthinfo = String.valueOf(this.mc.thePlayer.getHealth() + "/" + this.mc.thePlayer.getMaxHealth());
 				if(percentHealth < 0.15){
 					this.drawCenteredString(fontRenderer, healthinfo, scaledWidth / 2 - 45 , healthRowHeight+1, 0xFF0000);
@@ -186,12 +185,10 @@ public class HUDGUI extends GuiIngame {
 				int mana = playerclient.getMana();
 				float manaPercentage = mana/maxMana;
 				String manaInfo = mana + "/" + maxMana;
-				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-				GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/minecraftonline/kmod/resources/icons.png"));
+				this.mc.renderEngine.bindTexture("/minecraftonline/kmod/resources/icons.png");
 				this.drawTexturedModalRect(scaledWidth / 2, manaRowHeight, 0, 39, 90, 10);
-				
 				this.drawTexturedModalRect(scaledWidth / 2, manaRowHeight, 0, 48, (int) (90*manaPercentage), 9);
-				
+				//GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 				if(manaPercentage < 0.15){
 					this.drawCenteredString(fontRenderer, manaInfo, scaledWidth / 2 + 45 , manaRowHeight+1, 0xFF0000);
 				}else{
@@ -209,7 +206,7 @@ public class HUDGUI extends GuiIngame {
             String foodInfo = currentfood + "/" + maxfood;
             //Draw Food 
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/minecraftonline/kmod/resources/icons.png"));
+			this.mc.renderEngine.bindTexture("/minecraftonline/kmod/resources/icons.png");
 			this.drawTexturedModalRect(scaledWidth / 2, healthRowHeight, 0, 19, 90, 10);
 			
 			this.drawTexturedModalRect(scaledWidth / 2, healthRowHeight, 0, 29, (int) (90*foodPercentage), 9);
@@ -226,8 +223,8 @@ public class HUDGUI extends GuiIngame {
 			int armor = ForgeHooks.getTotalArmorValue(mc.thePlayer);
 			float armorPercentage = (float)armor/maxArmor;
 			String armorInfo = armor + "/" + maxArmor;
+			this.mc.renderEngine.bindTexture("/minecraftonline/kmod/resources/icons.png");
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/minecraftonline/kmod/resources/icons.png"));
 			this.drawTexturedModalRect(scaledWidth / 2 - 91, armorRowHeight, 0, 39, 90, 10);
 			
 			this.drawTexturedModalRect(scaledWidth / 2 - 91, armorRowHeight, 0, 59, (int) (90*armorPercentage), 9);
